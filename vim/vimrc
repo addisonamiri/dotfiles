@@ -1,0 +1,21 @@
+" ┌──────────────────────────┐
+" │                          │
+" │  Addison Amiri's .vimrc  │
+" │                          │
+" └──────────────────────────┘
+
+" General─────────────────────
+
+set modelines=0               " turn off modelines for security purposes
+filetype plugin indent on
+set nocompatible
+colors solarized
+
+
+" Let's begin─────────────────
+
+set encoding=utf-8
+set backspace=indent,eol,start
+set noswapfile
+set visualbell
+
