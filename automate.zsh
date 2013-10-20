@@ -1,3 +1,3 @@
 #! /usr/bin/zsh
 
-find . -name "symlink.zsh" -exec {}
+find . -name "symlink.zsh" -exec {} \;
