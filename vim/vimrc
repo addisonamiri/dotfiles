@@ -18,4 +18,10 @@ set encoding=utf-8
 set backspace=indent,eol,start
 set noswapfile
 set visualbell
-
+set ruler
+syntax on
+set autoindent smartindent
+set expandtab
+set smarttab
+set tabstop=2
+set shiftwidth=2
