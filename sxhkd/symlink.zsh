@@ -22,4 +22,4 @@ else
 fi
 
 mypath=$(exec 2>/dev/null;cd $(dirname $0);unset PWD;/usr/bin/pwd||/bin/pwd||pwd)
-ln -s 'mypath'/sxhkdrc ~/.config/sxhkd/sxhkdrc
+ln -s $mypath/sxhkdrc ~/.config/sxhkd/sxhkdrc

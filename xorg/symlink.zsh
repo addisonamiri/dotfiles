@@ -10,5 +10,5 @@ if [[ -e ~/.Xresources ]]; then
 fi
 
 mypath=$(exec 2>/dev/null;cd $(dirname $0);unset PWD;/usr/bin/pwd||/bin/pwd||pwd)
-ln -s 'mypath'/xinitrc ~/.xinitrc
-ln -s 'mypant'/xresources ~/.Xresources
+ln -s $mypath/xinitrc ~/.xinitrc
+ln -s $mypath/xresources ~/.Xresources
