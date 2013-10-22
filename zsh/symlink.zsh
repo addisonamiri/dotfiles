@@ -21,6 +21,11 @@ else
   mkdir -p ~/.oh-my-zsh/themes
 fi
 
+if [[ -e ~/.zshrc ]]; then
+  echo "The file at ~/.zshrc has been renamed .zshrc.old"
+  mv ~/.zshrc ~/.zshrc.old
+fi
+
 mypath=$(exec 2>/dev/null;cd $(dirname $0);unset PWD;/usr/bin/pwd||/bin/pwd||pwd)
 ln -s $mypath/zshrc ~/.zshrc
 ln -s $mypath/theme ~/.oh-my-zsh/themes/thecoolest.zsh-theme
