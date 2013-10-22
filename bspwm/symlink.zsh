@@ -18,7 +18,7 @@ if [[ -e ~/.config ]]; then
     fi
   fi
 else
-  mkdir ~/.config
+  mkdir -p ~/.config/bspwm
 fi
 
 mypath=$(exec 2>/dev/null;cd $(dirname $0);unset PWD;/usr/bin/pwd||/bin/pwd||pwd)
