@@ -1,0 +1,22 @@
+#! /usr/bin/zsh
+
+if [[ -e ~/.i3 ]]; then
+  if [[ ! ( -d ~/.i3 ) ]]; then
+    echo "There's a ~/.i3 and it's not a directory..."; exit 1
+  else
+    if [[ -e ~/.i3/config ]]; then
+      echo "There's already a config in ~/.i3/\nIt has been renamed config.old"
+      mv ~/.config/bspwm/bspwmrc ~/.config/bspwm/bspwmrc.old
+    fi
+  fi
+else
+  mkdir -p ~/.i3
+fi
+if [[ -e ~/.i3status.conf ]]; then
+  echo "There's already a .i3status.conf in ~/\nIt has been renamed ~/.i3status.conf.old"
+  mv ~/i3status.conf.old ~/.i3status.conf.old
+fi
+
+mypath=$(exec 2>/dev/null;cd $(dirname $0);unset PWD;/usr/bin/pwd||/bin/pwd||pwd)
+ln -s $mypath/i3config ~/.i3/config
+ln -s $mypath/i3status ~/.i3status.conf
