@@ -1,49 +1,166 @@
-# Path to your oh-my-zsh configuration.
-ZSH=/usr/share/oh-my-zsh/
+# ┌──────────────────────────┐
+# │                          │
+# │  Addison Amiri's .zshrc  │
+# │                          │
+# └──────────────────────────┘
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="../../../../$HOME/.oh-my-zsh/themes/thecoolest"
+# Created By compinstall──────
 
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+zstyle ':completion:*' auto-description 'specify: %d'
+zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
+zstyle ':completion:*' expand prefix
+zstyle ':completion:*' file-sort name
+zstyle ':completion:*' format 'completing %d'
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' ignore-parents parent pwd directory
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+zstyle ':completion:*' list-prompt %SAt %p: Hit TAB for more, or the character to insert%s
+zstyle ':completion:*' list-suffixes true
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'm:{[:lower:]}={[:upper:]} r:|[._-/]=** r:|=**' 'l:|=* r:|=*'
+zstyle ':completion:*' max-errors 2
+zstyle ':completion:*' menu select=1
+zstyle ':completion:*' preserve-prefix '//[^/]##/'
+zstyle ':completion:*' prompt '%e posssible corrections'
+zstyle ':completion:*' select-prompt %B%SScrolling active: current selection at %l%s%b
+zstyle ':completion:*' use-compctl false
+zstyle ':completion:*' verbose true
+zstyle :compinstall filename '/home/addison/.zshrc'
+autoload -Uz compinit
+compinit
 
-# Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
 
-# Uncomment this to disable bi-weekly auto-update checks
-DISABLE_AUTO_UPDATE="true"
+# Created By zsh-newuser-install──
 
-# Uncomment to change how often before auto-updates occur? (in days)
-# export UPDATE_ZSH_DAYS=13
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+setopt notify
+unsetopt appendhistory autocd beep nomatch
+bindkey -v
 
-# Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
 
-# Uncomment following line if you want to disable autosetting terminal title.
-# DISABLE_AUTO_TITLE="true"
+# Variables───────────────────
 
-# Uncomment following line if you want to disable command autocorrection
-# DISABLE_CORRECTION="true"
+export BROWSER="firefox"
+export EDITOR="vim"
 
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-# COMPLETION_WAITING_DOTS="true"
 
-# Uncomment following line if you want to disable marking untracked files under
-# VCS as dirty. This makes repository status check for large repositories much,
-# much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+# Prompt Config───────────────
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git colored-man compleat fbterm tmux)
+autoload -U colors && colors
+local return_code='%(?..↳%?)'
 
-source $ZSH/oh-my-zsh.sh
+PROMPT="%{$fg[red]%}${return_code}%{$reset_color%}
+》"
+RPROMPT="%{$fg[blue]%}[%1d]%{$reset_color%}"
 
-# Customize to your needs...
-ZSH_TMUX_AUTOSTART=true
 
+# Aliases─────────────────────
+
+alias grep="grep --color=auto"    # color grep
+alias more="less"                 # less is more
+alias df="df -h"                  # human readable
+alias du="du -c -h"               # produce a total and human readable
+alias mkdir="mkdir -p -v"         # make parents verbosely
+alias ping="ping -c 5"            # 5 times
+alias dmesg="dmesg -HL"           # human readable in color
+alias mplayer="mplayer -msgcolor" # color mplayer output
+
+alias du1="du --max-depth=1"      # stop du 1 dir deep
+alias hist="history | grep"       # search zsh history
+alias openports="ss --all --numeric --processes --ipv4 --ipv6"  # list open ports
+
+
+# Privileged Access───────────
+
+if [[ $UID -ne 0 ]]; then
+  alias sudo="sudo "
+  alias scat="sudo cat"
+  alias svim="sudo vim"
+  alias root="sudo -s"
+  alias reboot="sudo systemctl reboot"
+  alias poweroff="sudo systemctl poweroff"
+  alias netctl="sudo netctl"
+fi
+
+
+# Ls──────────────────────────
+
+alias ls="ls -hF --color=auto"
+alias lr="ls -R"
+alias ll="ls -l"
+alias la="ll -A"
+alias lx="ll -BX"
+alias lz="ll -rS"
+alias lt="ll -rt"
+
+
+# Safety Features─────────────
+
+alias cp="cp -i"
+alias mv="mv -i"
+alias rm="timeout 3 rm -Iv --one-file-system"
+alias ln="ln -i"
+alias chown="chown --preserve-root"
+alias chmod="chmod --preserve-root"
+alias chgrp="chgrp --preselve-root"
+alias cls="echo -ne '\033c'"
+
+
+# Package Manager Stuff───────
+
+alias pac="/usr/bin/yaourt -S"        # default action
+alias pacu="/usr/bin/yaourt -Syua"    # [u]pdate
+alias pacr="/usr/bin/yaourt -Rs"      # [r]emove
+alias pacs="/usr/bin/yaourt"          # [s]earch
+alias paci="/usr/bin/yaourt -Si"      # [i]nfo
+
+
+# Functions───────────────────
+
+function wallpaper () {
+if [[ ($1 == 1) || (-z $(xrandr | grep " connected" | grep VGA)) ]]; then
+  feh --no-fehbg --bg-fill ~/images/wallpapers/catalyst.jpg
+else
+  feh --no-fehbg --bg-fill ~/images/wallpapers/{catalyst.jpg,tropical_planet.jpg}
+fi
+}
+
+function monitor () {
+if [[ -z $(xrandr | grep " connected" | grep VGA) ]]; then
+  xrandr --output VGA1 --off;
+  wallpaper 1;
+else
+  xrandr --output VGA1 --auto --pos 0x0 --output LVDS1 --auto --pos 1920x280 # 280=1080-800
+  wallpaper 2;
+  bspc desktop X -m VGA1
+  bspc desktop $(bspc query -D | grep --color=never -m 1 Desktop) -r
+fi
+}
+
+function net () {
+if [[ -z $1 ]]; then
+  sudo wifi-menu
+else
+  case "$1" in
+    home)
+      sudo netctl start wlp2s0-Parsai\ Network
+      ;;
+    gpc)
+      sudo netctl start wlp2s0-JagTalk\ Student
+      ;;
+    gpc1)
+      sudo netctl start wlp2s0-JagTalk\ Student1
+      ;;
+    eth)
+      sudo dhcpcd enp0s25
+      ;;
+    off)
+      sudo netctl stop-all
+      ;;
+    *)
+      sudo wifi-menu
+      ;;
+  esac
+fi
+}

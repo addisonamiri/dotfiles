@@ -18,13 +18,4 @@ xrdb -merge ~/.Xresources
 # Mouse cursor
 xsetroot -cursor_name left_ptr
 
-# without fifo
-exec bspwm 
-
-# with fifo
-#[ -e "$PANEL_FIFO" ] && rm "$PANEL_FIFO"
-#mkfifo "$PANEL_FIFO"
-#exec bspwm -s "$PANEL_FIFO" -p W
-
-# gnome shit
-#exec gnome-session
+exec i3
