@@ -9,7 +9,6 @@
 set modelines=0               " turn off modelines for security purposes
 filetype plugin indent on
 set nocompatible
-colors solarized
 
 
 " Let's begin─────────────────
