@@ -51,8 +51,7 @@ autoload -U colors && colors
 local return_code='%(?..↳%?)'
 
 PROMPT="%{$fg[red]%}${return_code}%{$reset_color%}
-》"
-RPROMPT="%{$fg[blue]%}[%1d]%{$reset_color%}"
+<%{$fg[yellow]%}%1d%{$reset_color%}> "
 
 
 # Aliases─────────────────────
@@ -127,7 +126,7 @@ fi
 }
 
 function monitor () {
-if [[ -z $(xrandr | grep " connected" | grep VGA) ]]; then
+if [[ ($1 == 1) || (-z $(xrandr | grep " connected" | grep VGA)) ]]; then
   xrandr --output VGA1 --off;
   wallpaper 1;
 else

@@ -12,10 +12,22 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
 fi
 
 # Xresources
-xrdb ~/.config/color_schemes/xresources/${COLOR_SCHEME}.xresources
-xrdb -merge ~/.Xresources
+xrdb -load ~/.Xresources
+# to load a colorscheme from a seperate file use this
+#xrdb -override ~/.colorscheme
 
 # Mouse cursor
 xsetroot -cursor_name left_ptr
 
+# Start urxvtd
+#urxvtd &
+
+# Start Xmonad & Xmobar
+#xmobar&
+#exec xmonad
+
+# Start i3
 exec i3
+
+# Start Openbox
+#exec openbox-session

@@ -7,16 +7,18 @@
 " General─────────────────────
 
 set modelines=0               " turn off modelines for security purposes
-filetype plugin indent on
-set nocompatible
+filetype plugin indent on     " turn on a bunch of stuff
+set nocompatible              " turn off vi compatibility
+let g:molokai_original = 0    " use original monokai colorscheme to match terminal colors
+colorscheme molokai           " molokai colorscheme
 
 
-" Let's begin─────────────────
+" Let's Begin─────────────────
 
+set hidden                    " allow for hiding modified buffers
 set encoding=utf-8
 set backspace=indent,eol,start
 set noswapfile
-set visualbell
 set ruler
 syntax on
 set autoindent smartindent
@@ -24,3 +26,6 @@ set expandtab
 set smarttab
 set tabstop=2
 set shiftwidth=2
+set cpoptions+=$
+set wildmenu
+set number

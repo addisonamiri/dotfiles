@@ -16,7 +16,7 @@
 # clear in small sizes. However, if you need a lot of unicode glyphs or
 # right-to-left text rendering, you should instead use pango for rendering and
 # chose a FreeType font, such as:
-font pango:Anonymice Powerline 10
+font xft:Inconsolata 9
 
 # use Mouse+Mod4 to drag floating windows to their wanted position
 floating_modifier Mod4
@@ -148,32 +148,32 @@ bar {
   position top
   output LVDS1
   tray_output LVDS1
-  font pango:Anonymice Powerline 10
+  font xft:Inconsolata 9
   colors {
-    background #000000
-    statusline #ababab
-    separator  #3b48e3
+    background #f92672
+    statusline #f8f8f2
+    separator  #f92672
     #class              border  background  text
-    focused_workspace   #000000 #000000     #ababab
-    active_workspace    #000000 #000000     #ababab
-    inactive_workspace  #000000 #000000     #555555
-    urgent_workspace    #e92f2f #e92f2f     #ababab
+    focused_workspace   #f92672 #f92672     #f8f8f2
+    active_workspace    #f92672 #f92672     #f8f8f2
+    inactive_workspace  #f92672 #f92672     #a59f85
+    urgent_workspace    #f92672 #f92672     #f8f8f2
   }
 }
 
 bar {
   position top
   output VGA1
-  font pango:Anonymice Powerline 10
+  font xft:Inconsolata 9
   colors {
-    background #000000
-    statusline #ababab
-    separator  #3b48e3
+    background #f92672
+    statusline #f8f8f2
+    separator  #f92672
     #class              border  background  text
-    focused_workspace   #000000 #000000     #ababab
-    active_workspace    #000000 #000000     #ababab
-    inactive_workspace  #000000 #000000     #555555
-    urgent_workspace    #e92f2f #e92f2f     #ababab
+    focused_workspace   #f92672 #f92672     #f8f8f2
+    active_workspace    #f92672 #f92672     #f8f8f2
+    inactive_workspace  #f92672 #f92672     #a59f85
+    urgent_workspace    #f92672 #f92672     #f8f8f2
   }
 }
 
@@ -183,7 +183,7 @@ focus_follows_mouse yes
 
 ## colors
 # class                 border  background  text    indicator
-client.focused          #ababab #000000     #ababab #e92f2f
-client.focused_inactive #ababab #000000     #ababab #e92f2f
-client.unfocused        #000000 #000000     #ababab #e92f2f
-client.urgent           #e92f2f #e92f2f     #ababab #ababab
+client.focused          #f8f8f2 #272822     #f8f8f2 #f92672
+client.focused_inactive #f8f8f2 #272822     #f8f8f2 #f92672
+client.unfocused        #272822 #272822     #f8f8f2 #f92672
+client.urgent           #f92672 #f92672     #f8f8f2 #f8f8f2
