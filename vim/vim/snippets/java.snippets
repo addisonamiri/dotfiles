@@ -31,7 +31,7 @@ snippet sy
 snippet im
 	import
 snippet j.u
-	java.util
+	java.util.
 snippet j.i
 	java.io.
 snippet j.b
@@ -41,19 +41,40 @@ snippet j.n
 snippet j.m
 	java.math.
 snippet if
-	if (${1}) ${2}
+	if (${1})
+	{
+		${2}
+	}
 snippet el
-	else 
+	else
+	{
+		${1}
+	}
 snippet elif
-	else if (${1}) ${2}
+	else if (${1})
+	{
+		${2}
+	}
 snippet wh
-	while (${1}) ${2}
+	while (${1})
+	{
+		${2}
+	}
 snippet for
-	for (${1}; ${2}; ${3}) ${4}
+	for (${1}; ${2}; ${3})
+	{
+		${4}
+	}
 snippet fore
-	for (${1} : ${2}) ${3}
+	for (${1} : ${2})
+	{
+		${3}
+	}
 snippet sw
-	switch (${1}) ${2}
+	switch (${1})
+	{
+		${2}
+	}
 snippet cs
 	case ${1}:
 		${2}
@@ -62,6 +83,11 @@ snippet tc
 	public class ${1:`Filename()`} extends ${2:TestCase}
 snippet t
 	public void test${1:Name}() throws Exception ${2}
+snippet pcl
+	public class ${1:`Filename("", "untitled")`}
+	{
+		${2}
+	}
 snippet cl
 	class ${1:`Filename("", "untitled")`} ${2}
 snippet in
@@ -76,3 +102,17 @@ snippet cos
 	static public final String ${1:var} = "${2}";${3}
 snippet as
 	assert ${1:test} : "${2:Failure message}";${3}
+snippet print
+	System.out.print(${1:String});
+snippet printq
+	System.out.print("${1:message}");
+snippet println
+	System.out.println(${1:String});
+snippet printlnq
+	System.out.println("${1:message}");
+snippet ArrayList
+	ArrayList<${1:type}> ${2:var}${3: = new ArrayList<${1:type}>()};
+snippet Scanner.kb
+	Scanner kb = new Scanner(System.in);
+snippet Array
+	${1:type}${2:[]} ${3:var}${4: = new ${1:type}[${5}]${6};
