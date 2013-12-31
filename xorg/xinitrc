@@ -19,15 +19,5 @@ xrdb -load ~/.Xresources
 # Mouse cursor
 xsetroot -cursor_name left_ptr
 
-# Start urxvtd
-#urxvtd &
-
-# Start Xmonad & Xmobar
-#xmobar&
-#exec xmonad
-
-# Start i3
-exec i3
-
-# Start Openbox
-#exec openbox-session
+# BSPWM
+exec bspwm

@@ -26,6 +26,7 @@ zstyle ':completion:*' use-compctl false
 zstyle ':completion:*' verbose true
 zstyle :compinstall filename '/home/addison/.zshrc'
 autoload -Uz compinit
+autoload -U zmv
 compinit
 
 
@@ -41,8 +42,22 @@ bindkey -v
 
 # Variables───────────────────
 
+# xdg directories
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DESKTOP_DIR="$HOME"
+export XDG_DOWNLOAD_DIR="$HOME/downloads"
+export XDG_TEMPLATES_DIR="$HOME/templates"
+export XDG_PUBLICSHARE_DIR="$HOME/public"
+export XDG_DOCUMENTS_DIR="$HOME/text"
+export XDG_MUSIC_DIR="$HOME/sound"
+export XDG_PICTURES_DIR="$HOME/images"
+export XDG_VIDEOS_DIR="$HOME/video"
+
+# other shit
 export BROWSER="firefox"
 export EDITOR="vim"
+export SHELL="/usr/bin/zsh"
+export PATH=$PATH:/home/addison/bin/
 
 
 # Prompt Config───────────────
@@ -79,6 +94,7 @@ if [[ $UID -ne 0 ]]; then
   alias root="sudo -s"
   alias reboot="sudo systemctl reboot"
   alias poweroff="sudo systemctl poweroff"
+  alias shutdown="sudo shutdown now"
   alias netctl="sudo netctl"
 fi
 
@@ -108,29 +124,33 @@ alias cls="echo -ne '\033c'"
 
 # Package Manager Stuff───────
 
-alias pac="/usr/bin/yaourt -S"        # default action
-alias pacu="/usr/bin/yaourt -Syua"    # [u]pdate
-alias pacr="/usr/bin/yaourt -Rs"      # [r]emove
-alias pacs="/usr/bin/yaourt"          # [s]earch
-alias paci="/usr/bin/yaourt -Si"      # [i]nfo
+alias pac="/usr/bin/pacaur -S"        # default action
+alias pacu="/usr/bin/pacaur -Syu"     # [u]pdate
+alias pacr="/usr/bin/pacaur -Rs"      # [r]emove
+alias pacs="/usr/bin/pacaur -Ss --votes"      # [s]earch
+alias paci="/usr/bin/pacaur -Si"      # [i]nfo
+alias pacii="/usr/bin/pacaur -Sii"    # [i]ntense [i]nfo
 
 
 # Functions───────────────────
 
 function wallpaper () {
 if [[ ($1 == 1) || (-z $(xrandr | grep " connected" | grep VGA)) ]]; then
-  feh --no-fehbg --bg-fill ~/images/wallpapers/catalyst.jpg
+  find ~/images/wallpaper -type f \( -name '*.jpg' -o -name '*.png' \) -print0 | shuf -n1 -z | xargs -0 feh --no-fehbg --bg-fill
 else
-  feh --no-fehbg --bg-fill ~/images/wallpapers/{catalyst.jpg,tropical_planet.jpg}
+  find ~/images/wallpaper -type f \( -name '*.jpg' -o -name '*.png' \) -print0 | shuf -n2 -z | xargs -0 feh --no-fehbg --bg-fill
 fi
 }
 
 function monitor () {
 if [[ ($1 == 1) || (-z $(xrandr | grep " connected" | grep VGA)) ]]; then
   xrandr --output VGA1 --off;
+  bspc monitor -d I II III IV V VI VII VIII IX X
   wallpaper 1;
 else
   xrandr --output VGA1 --auto --pos 0x0 --output LVDS1 --auto --pos 1920x280 # 280=1080-800
+  bspc monitor VGA1 -d I II III IV V
+  bspc monitor LVDS1 -d VI VII VIII IX X
   wallpaper 2;
 fi
 }
@@ -140,14 +160,17 @@ if [[ -z $1 ]]; then
   sudo wifi-menu
 else
   case "$1" in
-    home)
-      sudo netctl start wlp2s0-Parsai\ Network
+    dads)
+      sudo netctl start dads_house
       ;;
-    gpc)
-      sudo netctl start wlp2s0-JagTalk\ Student
+    7)
+      sudo netctl start 7_coffee
       ;;
-    gpc1)
-      sudo netctl start wlp2s0-JagTalk\ Student1
+    matt)
+      sudo netctl start matts_house
+      ;;
+    starbucks)
+      sudo netctl start starbucks
       ;;
     eth)
       sudo dhcpcd enp0s25

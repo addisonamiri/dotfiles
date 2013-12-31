@@ -6,7 +6,7 @@
 
 # quit bspwm
 super + alt + Escape
-  bspc quit
+  pkill -x panel; bspc quit
 
 # close window
 super + w
@@ -16,9 +16,13 @@ super + w
 super + b
   bspc desktop -B
 
-# set window to floating/fullscreen
-super + {s,f}
-  bspc window -t {floating,fullscreen}
+# set window to floating
+super + shift + space
+  bspc window -t floating
+
+# set window to fullscreen
+super + f
+  bspc window -t fullscreen
 
 # focus last window/desktop
 super + Tab
@@ -88,6 +92,13 @@ super + Return
 # launch dmenu
 super + space
   dmenu_run
+
+# volume control
+XF86Audio{Lower,Raise}Volume
+  amixer -q sset Master 3%{-,+} unmute
+
+XF86AudioMute
+  amixer -q sset Master toggle
 
 # make sxhkd reload its configuration files:
 super + Escape
