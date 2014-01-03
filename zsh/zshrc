@@ -83,6 +83,7 @@ alias mplayer="mplayer -msgcolor" # color mplayer output
 alias du1="du --max-depth=1"      # stop du 1 dir deep
 alias hist="history | grep"       # search zsh history
 alias openports="ss --all --numeric --processes --ipv4 --ipv6"  # list open ports
+alias trc="transmission-remote-cli" # transmission cli
 
 
 # Privileged Access───────────
@@ -130,6 +131,15 @@ alias pacr="/usr/bin/pacaur -Rs"      # [r]emove
 alias pacs="/usr/bin/pacaur -Ss --votes"      # [s]earch
 alias paci="/usr/bin/pacaur -Si"      # [i]nfo
 alias pacii="/usr/bin/pacaur -Sii"    # [i]ntense [i]nfo
+
+
+# Directory Bookmarks─────────
+
+alias dl="cd /home/addison/downloads"
+alias dev="cd /home/addison/development"
+alias music="cd /home/addison/sound/music"
+alias movies="cd /home/addison/video/movies"
+alias tv="cd /home/addison/video/tv"
 
 
 # Functions───────────────────

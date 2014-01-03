@@ -1,4 +1,4 @@
-#! /usr/bin/zsh
+#!/usr/bin/zsh
 
 sxhkd &
 
@@ -13,5 +13,5 @@ bspc config focus_follows_pointer true
 urxvtd -q -f -o
 /home/addison/bin/panel dzen2 &
 compton -cCb
-monitor
+zsh -c monitor
 }

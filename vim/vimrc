@@ -29,3 +29,21 @@ set shiftwidth=2
 set cpoptions+=$
 set wildmenu
 set number
+
+
+" Remaps─────────────────
+
+" remap ; to : so you don't have to hold shift
+map ; :
+" escape on ., so you roll your fingers to insert a command (.,;)
+imap ., <Esc>
+" map leader
+let mapleader = "-"
+" tree
+nmap <leader>t :NERDTree<CR>
+" buffers
+nmap <leader>b :ls<CR>:b 
+" shell
+nmap <leader>s :ConqueTerm zsh<CR>
+" matrix
+nmap <leader>m :Matrix<CR>
