@@ -1,0 +1,21 @@
+[submodule "vim/vim/bundle/conque-term"]
+	path = vim/vim/bundle/conque-term
+	url = https://github.com/rosenfeld/conque-term.git
+[submodule "vim/vim/bundle/nerdtree"]
+	path = vim/vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "vim/vim/bundle/syntastic"]
+	path = vim/vim/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic.git
+[submodule "vim/vim/bundle/vim-surround"]
+	path = vim/vim/bundle/vim-surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule "vim/vim/bundle/molokai"]
+	path = vim/vim/bundle/molokai
+	url = https://github.com/tomasr/molokai.git
+[submodule "vim/vim/bundle/snipmate.vim"]
+	path = vim/vim/bundle/snipmate.vim
+	url = https://github.com/msanders/snipmate.vim.git
+[submodule "vim/vim/bundle/vim-matrix-screensaver"]
+	path = vim/vim/bundle/vim-matrix-screensaver
+	url = https://github.com/uguu-org/vim-matrix-screensaver.git
