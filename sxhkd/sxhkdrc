@@ -80,6 +80,10 @@ super + r
 super + {_,shift + }dollar
   bspc {monitor last --focus,desktop focused --to-monitor last}
 
+# monocle and tiled modes
+super + {m,t}
+  bspc desktop -l {next,next}
+
 
 ##
 ## wm independent hotkeys

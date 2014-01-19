@@ -83,6 +83,7 @@ alias mplayer="mplayer -msgcolor" # color mplayer output
 alias du1="du --max-depth=1"      # stop du 1 dir deep
 alias hist="history | grep"       # search zsh history
 alias openports="ss --all --numeric --processes --ipv4 --ipv6"  # list open ports
+alias td="transmission-daemon"    # transmission daemon
 alias trc="transmission-remote-cli" # transmission cli
 
 
@@ -140,6 +141,11 @@ alias dev="cd /home/addison/development"
 alias music="cd /home/addison/sound/music"
 alias movies="cd /home/addison/video/movies"
 alias tv="cd /home/addison/video/tv"
+alias apph="cd /home/addison/school/14spring/apph_1040_a"
+alias cs="cd /home/addison/school/14spring/cs_1332_a1"
+alias cst="cd /home/addison/school/14spring/cs_1801_b"
+alias hts="cd /home/addison/school/14spring/hts_3061_a"
+alias phil="cd /home/addison/school/14spring/phil_3127_bh"
 
 
 # Functions───────────────────
@@ -176,11 +182,14 @@ else
     7)
       sudo netctl start 7_coffee
       ;;
-    matt)
+    matts)
       sudo netctl start matts_house
       ;;
     starbucks)
       sudo netctl start starbucks
+      ;;
+    tech)
+      sudo netctl start tech
       ;;
     eth)
       sudo dhcpcd enp0s25
