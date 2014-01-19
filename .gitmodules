@@ -13,9 +13,6 @@
 [submodule "vim/vim/bundle/molokai"]
 	path = vim/vim/bundle/molokai
 	url = https://github.com/tomasr/molokai.git
-[submodule "vim/vim/bundle/snipmate.vim"]
-	path = vim/vim/bundle/snipmate.vim
-	url = https://github.com/msanders/snipmate.vim.git
 [submodule "vim/vim/bundle/vim-matrix-screensaver"]
 	path = vim/vim/bundle/vim-matrix-screensaver
 	url = https://github.com/uguu-org/vim-matrix-screensaver.git
