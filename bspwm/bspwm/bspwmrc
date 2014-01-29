@@ -3,14 +3,14 @@
 mypath=$(exec 2>/dev/null;cd $(dirname $0);unset PWD;/usr/bin/pwd||/bin/pwd||pwd)
 
 sxhkd &
-$mypath/panel_loop &
+$mypath/panel dzen2 &
 $mypath/monitor
 
-bspc config focused_border_color    #88ff88
-bspc config active_border_color     #000000
-bspc config normal_border_color     #000000
-bspc config presel_border_color     #66cccc
-bspc config urgent_border_color     #b87457
+bspc config focused_border_color    '#88ff88'
+bspc config active_border_color     '#000000'
+bspc config normal_border_color     '#000000'
+bspc config presel_border_color     '#66cccc'
+bspc config urgent_border_color     '#b87457'
 bspc config border_width            1
 bspc config window_gap              20
 bspc config split_ratio             0.5

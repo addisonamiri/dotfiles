@@ -3,7 +3,7 @@
 # Example panel for dzen2
 
 font_family='gohufont'
-font_size=9
+font_size=11
 
 mypath=$(exec 2>/dev/null;cd $(dirname $0);unset PWD;/usr/bin/pwd||/bin/pwd||pwd)
 

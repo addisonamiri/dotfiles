@@ -6,7 +6,7 @@
 
 # quit bspwm
 super + alt + Escape
-  pkill -x panel_loop; bspc quit
+  pkill -x panel; bspc quit
 
 # close window
 super + w

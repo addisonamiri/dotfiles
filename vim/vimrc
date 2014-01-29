@@ -79,7 +79,8 @@ let mapleader = "-"
 " tree
 nmap <leader>t :NERDTree<CR>
 " buffers
-nmap <leader>b :ls!<CR>:b 
+nmap <leader>b :ls<CR>:b 
+nmap <leader>B :ls!<CR>:b 
 " shell
 nmap <leader>s :ConqueTerm zsh<CR>
 " matrix
