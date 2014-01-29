@@ -4,51 +4,64 @@
 
 !! URxvt Config
 
-*background: #1b1d1e
-*foreground: #d0d0d0
-*cursorColor: #d0d0d0
-*color0: #1b1d1e
-*color1: #960050
-*color2: #66aa11
-*color3: #c47f2c
-*color4: #30309b
-*color5: #7e40a5
-*color6: #3579a8
-*color7: #9999aa
-*color8: #303030
-*color9: #ff0090
-*color10: #80ff00
-*color11: #ffba68
-*color12: #5f5fee
-*color13: #bb88dd
-*color14: #4eb4fa
-*color15: #d0d0d0
+! color scheme
+*background:              #000000
+*foreground:              #88ff88
+! Black + DarkGrey
+*color0:                  #002200
+*color8:                  #446644
+! Red
+*color1:                  #b87457
+*color9:                  #ffaf85
+! Green
+*color2:                  #44ff44
+*color10:                 #aaffaa
+! Yellow
+*color3:                  #aaff66
+*color11:                 #ccffa9
+! Blue
+*color4:                  #6688bb
+*color12:                 #88aaff
+! Magenta
+*color5:                  #9988dd
+*color13:                 #aa99ee
+! Cyan
+*color6:                  #66cccc
+*color14:                 #aacccc
+! LightGrey + White
+*color7:                  #cbfecb
+*color15:                 #ffffff
 
 ! fonts
-*font:                xft:Inconsolata:pixelsize=14
+*font:                    -*-gohufont-medium-r-*-*-11-*-*-*-*-*-*-*
 
+! transparency
+URxvt*.depth:             32
+URxvt*.background:        rgba:0000/0000/0000/e777
 ! cursor settings
-URxvt*.cursorBlink: False
-URxvt*.cursorUnderline: False
+URxvt*.cursorBlink:       false
+URxvt*.cursorUnderline:   false
 
 ! random things
-URxvt*.scrollBar: False
-URxvt*.saveLines: 1000
-! URxvt*.internalBorder: 14
+URxvt*.scrollBar:         false
+URxvt*.saveLines:         1000
+!URxvt*.internalBorder:    14
 
 ! scrolling
-URxvt*.scrollTtyOutput: False
-URxvt*.scrollWithBuffer: False
-URxvt*.scrollTtyKeypress: True
+URxvt*.scrollTtyOutput:   false
+URxvt*.scrollWithBuffer:  false
+URxvt*.scrollTtyKeypress: true
 
 ! plugins
-URxvt.perl-ext-common: default,matcher
-URxvt.url-launcher: /usr/bin/firefox
-URxvt.matcher.button: 1
+URxvt.perl-ext-common:    default,matcher
+URxvt.url-launcher:       /usr/bin/firefox
+URxvt.matcher.button:     1
 
 ! xft settings
-Xft.dpi:        96
-Xft.antialias:  true
-Xft.hinting:    true
-Xft.rgba:       rgb
-Xft.hintstyle:  hintslight
+Xft.dpi:                  96
+Xft.antialias:            true
+Xft.hinting:              true
+Xft.rgba:                 rgb
+Xft.hintstyle:            hintfull
+Xft.autohint:             false
+Xft.lcdfilter:            lcddefault

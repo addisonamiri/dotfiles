@@ -10,8 +10,9 @@ set modelines=0               " turn off modelines for security purposes
 execute pathogen#infect()
 filetype plugin indent on     " turn on a bunch of stuff
 set nocompatible              " turn off vi compatibility
-let g:molokai_original = 0    " use original monokai colorscheme to match terminal colors
-colorscheme molokai           " molokai colorscheme
+"let g:molokai_original = 0    " use original monokai colorscheme to match terminal colors
+"colorscheme molokai           " molokai colorscheme
+colorscheme cterm
 
 
 " Let's Begin─────────────────
