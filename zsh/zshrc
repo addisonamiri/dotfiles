@@ -138,9 +138,11 @@ alias pacii="/usr/bin/pacaur -Sii"    # [i]ntense [i]nfo
 
 alias dl="cd /home/addison/downloads"
 alias dev="cd /home/addison/development"
+alias dot="cd /home/addison/development/repos/dotfiles"
 alias music="cd /home/addison/sound/music"
 alias movies="cd /home/addison/video/movies"
 alias tv="cd /home/addison/video/tv"
+alias school="cd /home/addison/school/14spring"
 alias apph="cd /home/addison/school/14spring/apph_1040_a"
 alias cs="cd /home/addison/school/14spring/cs_1332_a1"
 alias cst="cd /home/addison/school/14spring/cs_1801_b"

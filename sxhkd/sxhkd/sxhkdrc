@@ -93,6 +93,10 @@ super + {m,t}
 super + Return
   urxvtc
 
+# launch cmatrix
+super + shift + m
+  urxvtc -e cmatrix -a; bspc window -t fullscreen
+
 # launch dmenu
 super + space
   dmenu_run -q -i -h 18 -p ">" -fn "Gohufont-9:normal" -nb "#000000" -nf "#446644" -sb "#000000" -sf "#88ff88"
