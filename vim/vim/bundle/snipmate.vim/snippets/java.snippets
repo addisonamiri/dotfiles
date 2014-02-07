@@ -1,22 +1,22 @@
 snippet main
-	public static void main (String [] args)
+	public static void main (String[] args)
 	{
 		${1:/* code */}
 	}
 snippet pu
-	public
+	public 
 snippet po
-	protected
+	protected 
 snippet pr
-	private
+	private 
 snippet st
-	static
+	static 
 snippet fi
-	final
+	final 
 snippet ab
-	abstract
+	abstract 
 snippet re
-	return
+	return 
 snippet br
 	break;
 snippet de
@@ -27,9 +27,9 @@ snippet ca
 snippet th
 	throw 
 snippet sy
-	synchronized
+	synchronized 
 snippet im
-	import
+	import 
 snippet j.u
 	java.util.
 snippet j.i
@@ -41,34 +41,34 @@ snippet j.n
 snippet j.m
 	java.math.
 snippet if
-	if(${1})
+	if(${1:condition})
 	{
-		${2}
+		${2:/* code */}
 	}
 snippet el
 	else
 	{
-		${1}
+		${1:/* code */}
 	}
 snippet elif
-	else if(${1})
+	else if(${1:condition})
 	{
-		${2}
+		${2:/* code */}
 	}
 snippet wh
-	while(${1})
+	while(${1:condition})
 	{
-		${2}
+		${2:/* code */}
 	}
 snippet for
 	for(${1:int i = 0}; ${2:i < 10}; ${3:i++})
 	{
-		${4}
+		${4:/* code */}
 	}
 snippet fore
-	for(${1}:${2})
+	for(${1:String x}:${2:array[]})
 	{
-		${3}
+		${3:/* code */}
 	}
 snippet sw
 	switch(${1})
@@ -76,8 +76,8 @@ snippet sw
 		${2}
 	}
 snippet cs
-	case ${1}:	${2}
-	${3}
+	case ${1}:
+		${2}
 snippet tc
 	public
 	class ${1:`Filename()`} extends ${2:TestCase}
@@ -93,6 +93,11 @@ snippet cl
 snippet in
 	interface ${1:`Filename("", "untitled")`} ${2:extends Parent}${3}
 snippet m
+	${1:void} ${2:method}(${3})
+	{
+		${4}
+	}
+snippet mt
 	${1:void} ${2:method}(${3}) ${4:throws }
 	{
 		${5}
@@ -127,3 +132,6 @@ snippet array
 snippet array2
 	${1:type}[][] ${2:var} = new $1[${3:height}][${4:width}];
 	${5}
+snippet warn
+	@SuppressWarnings("${unchecked}")
+	${2}

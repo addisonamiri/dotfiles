@@ -54,7 +54,7 @@ URxvt*.scrollTtyKeypress: true
 
 ! plugins
 URxvt.perl-ext-common:    default,matcher
-URxvt.url-launcher:       /usr/bin/firefox
+URxvt.url-launcher:       /usr/bin/dwb
 URxvt.matcher.button:     1
 
 ! xft settings
