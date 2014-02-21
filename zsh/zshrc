@@ -54,10 +54,10 @@ export XDG_PICTURES_DIR="$HOME/images"
 export XDG_VIDEOS_DIR="$HOME/video"
 
 # other shit
-export BROWSER="firefox"
+export BROWSER="dwb"
 export EDITOR="vim"
 export SHELL="/usr/bin/zsh"
-export PATH=$PATH:/home/addison/bin/
+export PATH=$PATH:/home/addison/development/bin/
 
 
 # Prompt Config───────────────
@@ -140,8 +140,8 @@ alias dl="cd /home/addison/downloads"
 alias dev="cd /home/addison/development"
 alias dot="cd /home/addison/development/repos/dotfiles"
 alias music="cd /home/addison/sound/music"
-alias movies="cd /home/addison/video/movies"
-alias tv="cd /home/addison/video/tv"
+alias movies="cd /home/addison/video/Movies"
+alias tv="cd /home/addison/video/TV\ Shows"
 alias school="cd /home/addison/school/14spring"
 alias apph="cd /home/addison/school/14spring/apph_1040_a"
 alias cs="cd /home/addison/school/14spring/cs_1332_a1"
