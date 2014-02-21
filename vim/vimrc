@@ -10,8 +10,6 @@ set modelines=0               " turn off modelines for security purposes
 execute pathogen#infect()
 filetype plugin indent on     " turn on a bunch of stuff
 set nocompatible              " turn off vi compatibility
-"let g:molokai_original = 0    " use original monokai colorscheme to match terminal colors
-"colorscheme molokai           " molokai colorscheme
 colorscheme cterm
 
 
@@ -32,6 +30,13 @@ set cpoptions+=$
 set wildmenu
 set number
 set laststatus=2              " always show statusbar
+set listchars=tab:»·,trail:·,precedes:<,extends:>
+set list
+set nowrap
+set scrolloff=5
+set sidescrolloff=5
+set sidescroll=1
+set fillchars+=vert:│         " making the vertical split nice
 
 
 " Statusline──────────────────
@@ -41,12 +46,12 @@ set statusline+=\ [\ %{strlen(&fenc)?&fenc:'none'}\ , "file encoding
 set statusline+=\ %{&ff}\ ] "file format
 set statusline+=\ %h      "help file flag
 set statusline+=\ %m      "modified flag
-set statusline+=%#warningmsg#
-set statusline+=\ %r      "read only flag
+set statusline+=\ %#warningmsg#
+set statusline+=%r        "read only flag
 set statusline+=%*
 set statusline+=\ %y      "filetype
-set statusline+=%#warningmsg#
-set statusline+=\ %{SyntasticStatuslineFlag()}
+set statusline+=\ %#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 set statusline+=%=      "left/right separator
 set statusline+=%c,     "cursor column
@@ -67,6 +72,7 @@ let g:syntastic_auto_loc_list=1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_auto_jump = 1
+
 
 " Remaps──────────────────────
 
@@ -89,3 +95,23 @@ nmap <leader>m :Matrix<CR>
 nmap <leader>i gg=G``
 " whitespace
 nmap <leader>w :%s/\s\+$//g<CR>``
+" x11 copy and paste
+vnoremap <C-c> "+y
+nnoremap <C-v> :set paste<CR>"+p:set nopaste<CR>
+nnoremap <C-V> :set paste<CR>"+P:set nopaste<CR>
+inoremap <C-v> <Esc>:set paste<CR>"+P:set nopaste<CR>li
+
+
+" Commands────────────────────
+
+command W w !sudo tee % > /dev/null
+
+
+" Gui only────────────────────
+
+if has("gui_running")
+  let g:molokai_original = 0    " use original monokai colorscheme to match terminal colors
+  colorscheme molokai           " molokai colorscheme
+  set guioptions=
+  set guifont=Source\ Code\ Pro\ Medium\ 9
+endif
