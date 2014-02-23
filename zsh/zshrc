@@ -152,31 +152,6 @@ alias phil="cd /home/addison/school/14spring/phil_3127_bh"
 
 # Functions───────────────────
 
-function wallpaper () {
-if [[ ($1 == 1) || (-z $(xrandr | grep " connected" | grep VGA)) ]]; then
-  find ~/images/wallpaper -type f \( -name '*.jpg' -o -name '*.png' \) -print0 | shuf -n1 -z | xargs -0 feh --no-fehbg --bg-fill
-else
-  find ~/images/wallpaper -type f \( -name '*.jpg' -o -name '*.png' \) -print0 | shuf -n2 -z | xargs -0 feh --no-fehbg --bg-fill
-fi
-}
-
-function monitor () {
-if [[ ($1 == 1) || (-z $(xrandr | grep " connected" | grep VGA)) ]]; then
-  xrandr --output VGA1 --off
-  bspc monitor -d I II III IV V VI VII VIII IX X
-  wallpaper 1
-  bspc config top_padding 18
-else
-  xrandr --output VGA1 --auto --pos 0x0 --output LVDS1 --auto --pos 1920x280 # 280=1080-800
-  bspc monitor VGA1 -d I II III IV V
-  bspc monitor LVDS1 -d VI VII VIII IX X
-  wallpaper 2
-  bspc config -m LVDS1 top_padding 0
-  bspc config -m VGA1 top_padding 18
-fi
-bspc config window_gap 20
-}
-
 function net () {
 if [[ -z $1 ]]; then
   sudo wifi-menu

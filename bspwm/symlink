@@ -19,3 +19,20 @@ fi
 
 mypath=$(exec 2>/dev/null;cd $(dirname $0);unset PWD;/usr/bin/pwd||/bin/pwd||pwd)
 ln -s $mypath/bspwm ~/.config/bspwm
+
+execpath=$(echo $PATH | tr ':' '\n' | grep -m 1 $USER)
+if [[ -n $execpath ]]; then
+  if [[ -e $execpath/monitor ]]; then
+    echo "There's a monitor in "$execpath"\nIt has been renamed monitor.old"
+    mv $execpath/monitor $execpath/monitor.old
+  fi
+  if [[ -e $execpath/wallpaper ]]; then
+    echo "There's a wallpaper in "$execpath"\nIt has been renamed wallpaper.old"
+    mv $execpath/wallpaper $execpath/wallpaper.old
+  fi
+else
+  echo "There is no bin directory for this user"; exit 1
+fi
+
+cp $mypath/monitor.zsh $execpath/monitor
+cp $mypath/wallpaper.zsh $execpath/wallpaper

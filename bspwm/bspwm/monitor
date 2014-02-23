@@ -1,3 +1,0 @@
-#!/usr/bin/zsh -i
-monitor
-exit 0
