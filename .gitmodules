@@ -16,3 +16,6 @@
 [submodule "vim/vim/bundle/vim-matrix-screensaver"]
 	path = vim/vim/bundle/vim-matrix-screensaver
 	url = https://github.com/uguu-org/vim-matrix-screensaver.git
+[submodule "vim/vim/bundle/vim-colors-solarized"]
+	path = vim/vim/bundle/vim-colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized.git
