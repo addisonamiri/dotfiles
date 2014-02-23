@@ -114,4 +114,4 @@ super + Escape
 
 # readjust monitors
 XF86Launch1
-  zsh /home/addison/.config/bspwm/monitor
+  zsh monitor.zsh
