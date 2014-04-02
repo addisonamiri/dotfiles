@@ -5,35 +5,35 @@
 !! URxvt Config
 
 ! color scheme
-*background:              #000000
-*foreground:              #88ff88
+!URxvt*.background:              #000000
+URxvt*.foreground:              #88ff88
 ! Black + DarkGrey
-*color0:                  #002200
-*color8:                  #446644
+URxvt*.color0:                  #002200
+URxvt*.color8:                  #446644
 ! Red
-*color1:                  #b87457
-*color9:                  #ffaf85
+URxvt*.color1:                  #b87457
+URxvt*.color9:                  #ffaf85
 ! Green
-*color2:                  #44ff44
-*color10:                 #aaffaa
+URxvt*.color2:                  #44ff44
+URxvt*.color10:                 #aaffaa
 ! Yellow
-*color3:                  #aaff66
-*color11:                 #ccffa9
+URxvt*.color3:                  #aaff66
+URxvt*.color11:                 #ccffa9
 ! Blue
-*color4:                  #6688bb
-*color12:                 #88aaff
+URxvt*.color4:                  #6688bb
+URxvt*.color12:                 #88aaff
 ! Magenta
-*color5:                  #9988dd
-*color13:                 #aa99ee
+URxvt*.color5:                  #9988dd
+URxvt*.color13:                 #aa99ee
 ! Cyan
-*color6:                  #66cccc
-*color14:                 #aacccc
+URxvt*.color6:                  #66cccc
+URxvt*.color14:                 #aacccc
 ! LightGrey + White
-*color7:                  #cbfecb
-*color15:                 #ffffff
+URxvt*.color7:                  #cbfecb
+URxvt*.color15:                 #ffffff
 
 ! fonts
-*font:                    -*-gohufont-medium-r-*-*-11-*-*-*-*-*-*-*
+URxvt*.font:                    -*-gohufont-medium-r-*-*-11-*-*-*-*-*-*-*
 
 ! transparency
 URxvt*.depth:             32

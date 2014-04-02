@@ -58,6 +58,7 @@ export BROWSER="dwb"
 export EDITOR="vim"
 export SHELL="/usr/bin/zsh"
 export PATH=$PATH:/home/addison/development/bin/
+export CLASSPATH=$CLASSPATH:.:/usr/share/java/junit.jar:/usr/share/java/hamcrest-core.jar
 
 
 # Prompt Config───────────────
@@ -85,6 +86,7 @@ alias hist="history | grep"       # search zsh history
 alias openports="ss --all --numeric --processes --ipv4 --ipv6"  # list open ports
 alias td="transmission-daemon"    # transmission daemon
 alias trc="transmission-remote-cli" # transmission cli
+alias junit="java org.junit.runner.JUnitCore"
 
 
 # Privileged Access───────────

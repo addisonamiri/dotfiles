@@ -37,6 +37,7 @@ set scrolloff=5
 set sidescrolloff=5
 set sidescroll=1
 set fillchars+=vert:│         " making the vertical split nice
+let g:vim_markdown_folding_disabled=1 "disable markdown folding
 
 
 " Statusline──────────────────
@@ -96,10 +97,9 @@ nmap <leader>i gg=G``
 " whitespace
 nmap <leader>w :%s/\s\+$//g<CR>``
 " x11 copy and paste
-vnoremap <C-c> "+y
-nnoremap <C-v> :set paste<CR>"+p:set nopaste<CR>
-nnoremap <C-V> :set paste<CR>"+P:set nopaste<CR>
-inoremap <C-v> <Esc>:set paste<CR>"+P:set nopaste<CR>li
+vnoremap <leader>c "+y
+nnoremap <leader>v :set paste<CR>"+P:set nopaste<CR>
+inoremap <leader>v <Esc>:set paste<CR>"+P:set nopaste<CR>li
 
 
 " Commands────────────────────
@@ -110,8 +110,8 @@ command W w !sudo tee % > /dev/null
 " Gui only────────────────────
 
 if has("gui_running")
-  let g:molokai_original = 0    " use original monokai colorscheme to match terminal colors
-  colorscheme molokai           " molokai colorscheme
+  set background=dark
+  colorscheme solarized         " molokai colorscheme
   set guioptions=
   set guifont=Source\ Code\ Pro\ Medium\ 9
 endif

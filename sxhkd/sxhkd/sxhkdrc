@@ -112,6 +112,10 @@ XF86AudioMute
 super + Escape
   pkill -USR1 -x sxhkd
 
-# readjust monitors
+# suspend monitor
 XF86Launch1
-  zsh monitor.zsh
+  xset dpms force suspend
+
+# readjust monitors
+super + XF86Launch1
+  monitor.zsh
